@@ -21,43 +21,43 @@ FoamFile
     {
         type            wall;
         inGroups        1(wall);
-        nFaces          30;
-        startFace       38410;
+        nFaces          60;
+        startFace       131620;
     }
     outlet
     {
         type            wall;
         inGroups        1(wall);
-        nFaces          50;
-        startFace       38440;
+        nFaces          100;
+        startFace       131680;
     }
     top
     {
         type            wall;
         inGroups        1(wall);
-        nFaces          80;
-        startFace       38490;
+        nFaces          160;
+        startFace       131780;
     }
     bottom
     {
         type            wall;
         inGroups        1(wall);
-        nFaces          80;
-        startFace       38570;
+        nFaces          160;
+        startFace       131940;
     }
     cylinder
     {
         type            wall;
         inGroups        1(wall);
-        nFaces          140;
-        startFace       38650;
+        nFaces          280;
+        startFace       132100;
     }
     sides
     {
         type            empty;
         inGroups        1(empty);
-        nFaces          38600;
-        startFace       38790;
+        nFaces          132000;
+        startFace       132380;
     }
 )
 

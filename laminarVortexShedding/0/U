@@ -1,7 +1,7 @@
 /*--------------------------------*- C++ -*----------------------------------*\
 | =========                 |                                                 |
 | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
-|  \\    /   O peration     | Version:  2.3.1                                 |
+|  \\    /   O peration     | Version:  2.1.x                                 |
 |   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
@@ -23,30 +23,30 @@ boundaryField
     inlet
     {
         type            fixedValue;
-	value		uniform (1 0 0);    
+        value           uniform (1 0 0);
     }
 
     outlet
     {
         type            zeroGradient;
     }
-
+    
     top
     {
-        type            slip;
+	type		slip;
     }
-    
+
     bottom
     {
-        type            slip;
+	type		slip;
     }
-
+    
     cylinder
     {
-        type            fixedValue;
-	value		uniform (0 0 0);  
+	type		fixedValue;
+	value		uniform (0 0 0);
     }
-
+    
     sides
     {
         type            empty;
