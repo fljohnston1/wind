@@ -9,54 +9,56 @@ FoamFile
 {
     version     2.0;
     format      ascii;
-    class       volScalarField;
-    location    "0";
-    object      k;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [0 2 -2 0 0 0 0];
-
-internalField   uniform 0.00325;
-
-boundaryField
-{
-        inlet
+6
+(
+    inlet
     {
-        type            kqRWallFunction;
-        value           uniform 0.00325;
+        type            wall;
+        inGroups        1(wall);
+        nFaces          30;
+        startFace       38410;
     }
-
     outlet
     {
-        type            kqRWallFunction;
-        value           uniform 0.00325;
+        type            wall;
+        inGroups        1(wall);
+        nFaces          50;
+        startFace       38440;
     }
-
     top
     {
-        type            kqRWallFunction;
-        value           uniform 0.00325;
+        type            wall;
+        inGroups        1(wall);
+        nFaces          80;
+        startFace       38490;
     }
-    
     bottom
     {
-        type            kqRWallFunction;
-        value           uniform 0.00325;
+        type            wall;
+        inGroups        1(wall);
+        nFaces          80;
+        startFace       38570;
     }
-
     cylinder
     {
-        type            kqRWallFunction;
-        value           uniform 0.00325;
+        type            wall;
+        inGroups        1(wall);
+        nFaces          140;
+        startFace       38650;
     }
-
     sides
     {
         type            empty;
+        inGroups        1(empty);
+        nFaces          38600;
+        startFace       38790;
     }
-
-}
-
+)
 
 // ************************************************************************* //

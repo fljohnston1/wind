@@ -17,34 +17,31 @@ FoamFile
 
 dimensions      [0 2 -2 0 0 0 0];
 
-internalField   uniform 0.00325;
+internalField   uniform 20;
 
 boundaryField
 {
     inlet
     {
         type            kqRWallFunction;
-        value           uniform 0.00325;
+        value           uniform 20;
     }
     outlet
     {
-        type            kqRWallFunction;
-        value           uniform 0.00325;
+        type            zeroGradient;
     }
     top
     {
-        type            kqRWallFunction;
-        value           uniform 0.00325;
+        type            slip;
     }
     bottom
     {
-        type            kqRWallFunction;
-        value           uniform 0.00325;
+        type            slip;
     }
     cylinder
     {
         type            kqRWallFunction;
-        value           uniform 0.00325;
+        value           uniform 0;     
     }
     sides
     {
