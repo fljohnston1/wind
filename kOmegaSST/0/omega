@@ -1,0 +1,76 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      omega;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 0 -1 0 0 0 0];
+
+internalField   uniform 1e-05;
+
+boundaryField
+{
+    inlet
+    {
+        type            omegaWallFunction;
+        value           uniform 1e-05;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        beta1           0.075;
+    }
+    outlet
+    {
+        type            omegaWallFunction;
+        value           uniform 1e-05;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        beta1           0.075;
+    }
+    top
+    {
+        type            omegaWallFunction;
+        value           uniform 1e-05;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        beta1           0.075;
+    }
+    bottom
+    {
+        type            omegaWallFunction;
+        value           uniform 1e-05;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        beta1           0.075;
+    }
+    cylinder
+    {
+        type            omegaWallFunction;
+        value           uniform 1e-05;
+        Cmu             0.09;
+        kappa           0.41;
+        E               9.8;
+        beta1           0.075;
+    }
+    sides
+    {
+        type            empty;
+    }
+}
+
+
+// ************************************************************************* //
