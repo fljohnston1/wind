@@ -6,14 +6,18 @@
 |    \\/     M anipulation  |                                                 |
 \*---------------------------------------------------------------------------*/
 
-upperWall
+forces
 {
-    type slip;
+    type                forces;
+    functionObjectLibs  ("libforces.so");
+    outputControl       timeStep;
+    outputInterval      1;
+     
+    patches             ( "cylinder" );
+    pName               p;
+    UName               U;
+    rhoName             rhoInf;
+    log                 true; 
+    CofR                (0 0 0);     
+    rhoInf              1.225;
 }
-
-frontAndBack
-{
-    type slip;
-}
-
-// ************************************************************************* //

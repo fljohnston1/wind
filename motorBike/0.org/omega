@@ -34,19 +34,14 @@ boundaryField
         value           $internalField;
     }
 
-    lowerWall
+
+    cylinder
     {
         type            omegaWallFunction;
         value           $internalField;
     }
 
-    motorBikeGroup
-    {
-        type            omegaWallFunction;
-        value           $internalField;
-    }
-
-    #include "include/frontBackUpperPatches"
+    #include "include/topBottomSidesPatches"
 }
 
 

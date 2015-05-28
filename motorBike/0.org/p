@@ -36,17 +36,12 @@ boundaryField
         value           $internalField;
     }
 
-    lowerWall
+    cylinder
     {
         type            zeroGradient;
     }
 
-    motorBikeGroup
-    {
-        type            zeroGradient;
-    }
-
-    #include "include/frontBackUpperPatches"
+    #include "include/topBottomSidesPatches"
 }
 
 // ************************************************************************* //

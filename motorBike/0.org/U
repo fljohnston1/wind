@@ -35,19 +35,14 @@ boundaryField
         value           $internalField;
     }
 
-    lowerWall
-    {
-        type            fixedValue;
-        value           $internalField;
-    }
 
-    motorBikeGroup
+    cylinder
     {
         type            fixedValue;
         value           uniform (0 0 0);
     }
 
-    #include "include/frontBackUpperPatches"
+    #include "include/topBottomSidesPatches"
 }
 
 
