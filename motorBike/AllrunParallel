@@ -1,0 +1,26 @@
+#!/bin/sh
+cd ${0%/*} || exit 1    # run from this directory
+
+# Source tutorial run functions
+. $WM_PROJECT_DIR/bin/tools/RunFunctions
+
+runApplication blockMesh
+
+runApplication decomposePar
+runParallel snappyHexMesh 8 -overwrite
+
+#- For non-parallel running
+#cp -r 0.org 0 > /dev/null 2>&1
+
+#- For parallel running
+ls -d processor* | xargs -i rm -rf ./{}/0
+ls -d processor* | xargs -i cp -r 0.org ./{}/0
+
+runParallel patchSummary 8
+runParallel potentialFoam 8 -noFunctionObjects
+runParallel $(getApplication) 8
+
+runApplication reconstructParMesh -constant
+runApplication reconstructPar -latestTime
+
+# ----------------------------------------------------------------- end-of-file
